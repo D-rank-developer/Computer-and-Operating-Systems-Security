@@ -15,7 +15,23 @@ step2: Extract the zip file and save the entire folder under C:\Windows.
 step3: Check for access to adb tools using command `adb version` on the cmd.
 ![SDK platform tools](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image5.png)
 
-NOTE: incase the `'adb' is not recognized as an internal or external command, operable programs or barch file` error is encountered, you can simply run this command on the cmd : `set PATH=%PATH%;C:\Windows\platform-tools`
+
+
+NOTE: incase the **`'adb' is not recognized as an internal or external command, operable programs or barch file`** error is encountered, you can simply run this command on the cmd : **`set PATH=%PATH%;C:\Windows\platform-tools`**
+alternatively:
+Change the directory to the directory of the platform tools:
+
+![Error_message_correction](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image6.png)
+
+
+Task 3: Setting Up Docker Android Simulator:
+step1: pull the image docker from https://github.com/budtmo/docker-android
+![pull_repo](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image9.png)
+
+step2: use the `docker images` command on the cmd to verify the image:
+![Error_message_correction](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image10.png)
+
+Task 4: Running the Android Emulator Container
 
 
 
