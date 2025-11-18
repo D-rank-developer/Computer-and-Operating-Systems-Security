@@ -93,6 +93,4 @@ Task 8 Openeing JADX-GUI and ensuring access the MANIFEST.XML
 ![docker_ifo](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image26_jadx.png)
 
 step2: Having access to MANIFEST.XML file.
-![docker_ifo](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/Screenshot(23).png)
-
-
+![dockerf](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/47651f0b4fb985e88bff4fd8f8589c2c82874d46/Android%20Mobile%20Application%20Security/Lab_images/Screenshot%20(23).png)
