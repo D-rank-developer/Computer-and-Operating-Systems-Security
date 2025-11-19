@@ -1,96 +1,257 @@
-Task 1: Installing JADX-GUI (Windows)
+# Android Mobile Application Security Lab Setup
 
-Step1: Install Java, JADX needs to run on Java Runtime Environment  (https://www.java.com/en/)
+This guide walks through installing **JADX-GUI**, **ADB (Android Platform Tools)**, **Docker Android Emulator**, and installing the **InjuredAndroid APK**.  
+All steps include screenshots, commands, and helpful notes.
+
+---
+
+## Task 1: Installing JADX-GUI (Windows)
+
+### **Step 1 — Install Java**
+JADX requires Java Runtime Environment (JRE).  
+Download Java here:  
+https://www.java.com/en/
+
 ![Installation Page](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image1.png)
-Step2: Download JADX-GUI from github view various releases and and download the .exe file: https://github.com/skylot/jadx/releases/tag/v1.2.0
-![Dowload JADX installation file](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image2.png)
 
-Task 2: Installing Android Platform Tools (ADB) on Windows
-step1: Download Andriod SDK platform tools. click here to download: https://developer.android.com/studio/releases/platform-tools
+---
+
+### **Step 2 — Download JADX GUI**
+Download the `.exe` installer from GitHub releases:  
+https://github.com/skylot/jadx/releases/tag/v1.2.0
+
+![Download JADX installation file](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image2.png)
+
+---
+
+## Task 2: Installing Android Platform Tools (ADB)
+
+### **Step 1 — Download Android SDK Platform Tools**
+Official download link:  
+https://developer.android.com/studio/releases/platform-tools
+
 ![SDK platform tools](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image3.png)
 
-step2: Extract the zip file and save the entire folder under C:\Windows.
-![SDK platform tools](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image4.png)
+---
 
-step3: Check for access to adb tools using command `adb version` on the cmd.
-![SDK platform tools](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image5.png)
+### **Step 2 — Extract ZIP File**
+Extract the folder and move it to:
 
+```
+C:\Windows\
+```
 
+![Extract folder](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image4.png)
 
-NOTE: incase the **`'adb' is not recognized as an internal or external command, operable programs or barch file`** error is encountered, you can simply run this command on the cmd : **`set PATH=%PATH%;C:\Windows\platform-tools`**
-alternatively:
-Change the directory to the directory of the platform tools:
+---
 
-![Error_message_correction](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image6.png)
+### **Step 3 — Verify ADB Installation**
 
+Run this in CMD:
 
-Task 3: Setting Up Docker Android Simulator:
-step1: pull the image docker from https://github.com/budtmo/docker-android
-![pull_repo](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image9.png)
+```
+adb version
+```
 
-step2: use the `docker images` command on the cmd to verify the image:
-![Error_message_correction](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image10.png)
+![adb version check](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image5.png)
 
-Task 4: Running the Android Emulator Container
-step1: create and start the container by using this command on the command prompt:
-`docker run -d -p 6080:6080 -p 5555:5555 -e EMULATOR_DEVICE="Samsung Galaxy S10" -e WEB_VNC=true --device /dev/kvm --name android-container budtmo/docker-android:emulator_11.0`
+---
 
-![run a container](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image11.png)
-also you can check docker desktop to check if the container is running (docker desktop should be open throughout this Lab)
-![docker info](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image12.png)
+### ⚠️ **Fix ADB Not Recognized Error**
 
-step2: check if the container is running using the command: `docker ps`
+If you see:
+```
+'adb' is not recognized as an internal or external command...
+```
 
-![docker_ifo](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image13.png)
+Run:
 
-Task 5: Accessing the wen interface of the Andriod Emulator:
-step 1: open this link with a browser: http://localhost:6080/
-step 2: CClick on Connect to connect the docker
-step3: the Android Emulator interface runs:
+```
+set PATH=%PATH%;C:\Windows\platform-tools
+```
 
-![android emulator](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image14.png)
+Or manually navigate:
 
-Interact with the android emulator and explore the apps:
-![docker_ifo](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image15_interact.png)
+```
+cd C:\Windows\platform-tools
+```
 
-step 4: Use the `docker logs android-container` command to check emulator logs
-![docker_ifo](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image16_logs.png)
+![Error fix](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image6.png)
 
-Task 6: Bridging ADB from windows host to docker container:
-step 1: connect to ADB the containerised emulator with this command: 
-`adb connect localhost:5555`
-![image17](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image17_IH5555.png)
-setp2: verify the connection using the command `adb devices`
-![docker_ifo](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image18_adb_devices.png)
-step3: Test ADB Connection using the command `adb shell getprop ro.build.version.release`
-step 4: list installed packages using command `adb shell pm list package`
+---
 
-Task 7 : Installing android apps in the emulator
-step 1: Using APK pure. Navigate using the emulator on the browser
-![docker_ifo](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image20_injured andriod.png)
-Alternatively: 
-Step 1: search for injured android app and click on the first legitimate gitnhub account:
-![docker_ifo](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image21_B3nac.png)
+## Task 3: Setting Up Docker Android Simulator
 
-step2: Click on the latest release of the android apk on the bottom right of the page: 
-![docker_ifo](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image22_b3nac.png)
+### **Step 1 — Pull the Docker Image**
+Repository link:  
+https://github.com/budtmo/docker-android
 
-step3: Scroll to the buttom of the page and click on the apk file to downlead:
-![docker_ifo](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image23.png)
+![Pull repo](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image9.png)
 
-step4: installing injuredAndroid apk. Check adb devices using the command `adb devices`
-![docker_ifo](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image24_adb_install.png)
+---
 
-step 5: use this command incase of possible error: `adb -s emulator-5554 install InjuredAndroid-1.0.12-release.apk` else use `adb install InjuredAndroid-1.0.12-release.apk`
+### **Step 2 — Verify Downloaded Images**
 
-![docker_ifo](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image25_commands.png)
+Run:
 
-the Injured Andriod app is successfully installed:
-![docker_ifo](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image25_injuredapp.png)
+```
+docker images
+```
 
-Task 8 Openeing JADX-GUI and ensuring access the MANIFEST.XML
+![docker images](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image10.png)
 
-![docker_ifo](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image26_jadx.png)
+---
 
-step2: Having access to MANIFEST.XML file.
-![dockerf](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/47651f0b4fb985e88bff4fd8f8589c2c82874d46/Android%20Mobile%20Application%20Security/Lab_images/Screenshot%20(23).png)
+## Task 4: Running the Android Emulator Container
+
+### **Step 1 — Start the Emulator Container**
+
+Run this command:
+
+```
+docker run -d -p 6080:6080 -p 5555:5555 -e EMULATOR_DEVICE="Samsung Galaxy S10" -e WEB_VNC=true --device /dev/kvm --name android-container budtmo/docker-android:emulator_11.0
+```
+
+![run container](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image11.png)
+
+You can also monitor Docker Desktop:
+
+![docker desktop](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image12.png)
+
+---
+
+### **Step 2 — Check Running Containers**
+
+```
+docker ps
+```
+
+![docker ps](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image13.png)
+
+---
+
+## Task 5: Accessing the Web Interface
+
+### **Step 1 — Open in Browser**
+
+Go to:  
+http://localhost:6080/
+
+### **Step 2 — Click "Connect"**
+
+![Emulator UI](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image14.png)
+
+Interact with the emulator:
+
+![Interact](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image15_interact.png)
+
+---
+
+### **Step 3 — View Emulator Logs**
+
+```
+docker logs android-container
+```
+
+![logs](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image16_logs.png)
+
+---
+
+## Task 6: Connecting ADB to Docker Emulator
+
+### **Step 1 — Connect ADB**
+
+```
+adb connect localhost:5555
+```
+
+![adb connect](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image17_IH5555.png)
+
+---
+
+### **Step 2 — List ADB Devices**
+
+```
+adb devices
+```
+
+![adb devices](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image18_adb_devices.png)
+
+---
+
+### **Step 3 — Test ADB Connection**
+
+```
+adb shell getprop ro.build.version.release
+```
+
+### **Step 4 — List Installed Packages**
+
+```
+adb shell pm list package
+```
+
+---
+
+## Task 7: Installing Android Apps in Emulator
+
+### **Option 1 — Using APKPure via Emulator Browser**
+
+![APKPpure InjuredAndroid](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image20_injured andriod.png)
+
+---
+
+### **Option 2 — Install Directly from GitHub**
+
+#### **Step 1 — Visit Official Repo**
+![injured android github](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image21_B3nac.png)
+
+#### **Step 2 — Go to Latest Release**
+![release page](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image22_b3nac.png)
+
+#### **Step 3 — Download APK**
+![download apk](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image23.png)
+
+---
+
+### **Step 4 — Install APK**
+
+Check device:
+
+```
+adb devices
+```
+
+Install:
+
+```
+adb install InjuredAndroid-1.0.12-release.apk
+```
+
+If errors occur:
+
+```
+adb -s emulator-5554 install InjuredAndroid-1.0.12-release.apk
+```
+
+![install apk](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image25_commands.png)
+
+Successful installation:
+
+![installed](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image25_injuredapp.png)
+
+---
+
+## Task 8: Opening JADX-GUI & Accessing MANIFEST.XML
+
+Open JADX-GUI:
+
+![jadx gui](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image26_jadx.png)
+
+Access the `AndroidManifest.xml` file:
+
+![manifest xml](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/47651f0b4fb985e88bff4fd8f8589c2c82874d46/Android%20Mobile%20Application%20Security/Lab_images/Screenshot%20(23).png)
+
+---
+
+### ✔️ **End of Lab Setup Guide**
