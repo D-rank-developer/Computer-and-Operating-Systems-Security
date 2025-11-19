@@ -197,7 +197,8 @@ adb shell pm list package
 
 ### **Option 1 — Using APKPure via Emulator Browser**
 
-![APKPpure InjuredAndroid](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image20_injured andriod.png)
+![APKPpure InjuredAndroid](https://raw.githubusercontent.com/D-rank-developer/Computer-and-Operating-Systems-Security/2da1ac53f384c2bab09b273a742c5003b51287fd/Android%20Mobile%20Application%20Security/Lab_images/image20_injured%20andriod.png)
+
 
 ---
 
