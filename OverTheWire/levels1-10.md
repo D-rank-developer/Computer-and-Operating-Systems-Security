@@ -159,7 +159,8 @@ The command searches the entire filesystem for regular files owned by bandit7, b
 
 ## **Level 7 → Level 8**
 
-![Level 7](image_0.png)
+![Level 7](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/87c172cea30eedb84abb1a858121dc5d1a25b456/OverTheWire/image7.jpg)
+![Level 7(2)](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/87c172cea30eedb84abb1a858121dc5d1a25b456/OverTheWire/image7(2).jpg)
 
 **Objective:** Find the line containing the word **"millionth"**.
 
@@ -177,7 +178,7 @@ strings data.txt | grep "millionth"
 
 ## **Level 8 → Level 9**
 
-![Level 8](image_7.png)
+![Level 8](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/87c172cea30eedb84abb1a858121dc5d1a25b456/OverTheWire/image8.jpg)
 
 **Objective:** Identify the only unique line in `data.txt`.
 
@@ -195,7 +196,7 @@ sort data.txt | uniq -c
 
 ## **Level 9 → Level 10**
 
-![Level 9](image_3.png)
+![Level 9](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/87c172cea30eedb84abb1a858121dc5d1a25b456/OverTheWire/image9.jpg)
 
 **Objective:** Extract the password hidden in noisy output, marked by `=` symbols.
 
@@ -213,7 +214,7 @@ strings data.txt | grep "="
 
 ## **Level 10 → Level 11**
 
-![Level 10](image_8.png)
+![Level 10](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/87c172cea30eedb84abb1a858121dc5d1a25b456/OverTheWire/image10.jpg)
 
 **Objective:** Decode the Base64-encoded password.
 
@@ -242,6 +243,5 @@ The contents were clearly Base64 encoded. Decoding it provided the password.
 
 ---
 
-# ✔️ End of Documentation
-This README is fully GitHub-ready, clean, structured, and suitable for public viewing.
+
 
