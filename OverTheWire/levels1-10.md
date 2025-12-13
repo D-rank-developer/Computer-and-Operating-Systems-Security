@@ -140,8 +140,16 @@ Using a precise `find` filter isolated the exact file required. Reading it revea
 ---
 
 ## **Level 6 → Level 7**
+### Commands Used
+```bash
+find / -type f -user bandit7 -group bandit6 -size 33c
+cat /var/lib/dpkg/info/bandit7.password
 
-❗ *Screenshot not provided.*
+```
+### Analysis
+The command searches the entire filesystem for regular files owned by bandit7, belonging to the bandit6 group, and exactly 33 bytes in size. After locating the correct file, cat is used to read its contents.
+
+**Password Found:** `morbNTDkSW6jIltC9YM0dMaLnoIFVAaj`
 
 ---
 
