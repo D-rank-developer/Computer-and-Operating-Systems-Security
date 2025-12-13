@@ -12,6 +12,8 @@ Each section includes:
 
 ## 📂 Screenshot are used for the Lab 
 Images are provided to explain the various commands.  
+SSH into the bandit challenge remote computer.
+![SSH](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/87c172cea30eedb84abb1a858121dc5d1a25b456/OverTheWire/ssh1.jpg)
 
 ---
 
@@ -21,7 +23,7 @@ Images are provided to explain the various commands.
 
 ## **Level 0 → Level 1**
 
-![Level 0](image_2.png)
+![Level 0](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/87c172cea30eedb84abb1a858121dc5d1a25b456/OverTheWire/image0.jpg)
 
 **Objective:** Read the password stored in the `readme` file.
 
@@ -40,7 +42,7 @@ Listing the directory revealed a `readme` file. Displaying it using `cat` showed
 
 ## **Level 1 → Level 2**
 
-![Level 1](image_5.png)
+![Level 1](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/87c172cea30eedb84abb1a858121dc5d1a25b456/OverTheWire/image1.jpg)
 
 **Objective:** Find the password stored in a file named `-`.
 
@@ -59,7 +61,7 @@ Since `-` is a special token in Linux, it must be referenced using `./-` to avoi
 
 ## **Level 2 → Level 3**
 
-![Level 2](image_9.png)
+![Level 2](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/87c172cea30eedb84abb1a858121dc5d1a25b456/OverTheWire/image2.jpg)
 
 **Objective:** Read a file with spaces in its name.
 
@@ -78,7 +80,7 @@ Filenames with spaces require escaping (`\`) or quoting to be read correctly.
 
 ## **Level 3 → Level 4**
 
-![Level 3](image_1.png)
+![Level 3](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/87c172cea30eedb84abb1a858121dc5d1a25b456/OverTheWire/image3.jpg)
 
 **Objective:** Find the password inside a hidden file.
 
@@ -98,7 +100,7 @@ Hidden files begin with `.` — using `ls -a` reveals them. Reading the hidden f
 
 ## **Level 4 → Level 5**
 
-![Level 4](image_6.png)
+![Level 4](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/87c172cea30eedb84abb1a858121dc5d1a25b456/OverTheWire/image4.jpg)
 
 **Objective:** Identify the only human-readable file inside `inhere`.
 
@@ -118,7 +120,7 @@ cat ./-file07
 
 ## **Level 5 → Level 6**
 
-![Level 5](image_4.png)
+![Level 5](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/87c172cea30eedb84abb1a858121dc5d1a25b456/OverTheWire/image5.jpg)
 
 **Objective:** Find a file that is:  
 - a regular file  
@@ -140,6 +142,8 @@ Using a precise `find` filter isolated the exact file required. Reading it revea
 ---
 
 ## **Level 6 → Level 7**
+![level6](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/87c172cea30eedb84abb1a858121dc5d1a25b456/OverTheWire/image6.jpg)
+![level6(2)](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/87c172cea30eedb84abb1a858121dc5d1a25b456/OverTheWire/image6(2).jpg)
 ### Commands Used
 ```bash
 find / -type f -user bandit7 -group bandit6 -size 33c
