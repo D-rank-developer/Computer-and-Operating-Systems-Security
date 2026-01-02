@@ -67,7 +67,7 @@ Updated settings configured `PASS_MIN_DAYS` to 1 and `PASS_MAX_DAYS` to 365:
 
 The Ctrl+Alt+Del reboot function was successfully disabled to prevent unauthorized system restarts:
 
-![Disabling Ctrl+Alt+Del](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/8987f91ac4af1d44c70063ad87a2bc6fac9c5848/OS%20Hardening/Lab/password_configuration/IMAGE01.png)
+![Disabling Ctrl+Alt+Del](https://github.com/D-rank-developer/Computer-and-Operating-Systems-Security/blob/f0dc3f9277abdd972c773bc1adfd9f7f6962328c/OS%20Hardening/Lab/password_configuration/IMAGE01.png)
 
 The command created a symlink to `/dev/null`, effectively masking the Ctrl+Alt+Del target.
 
